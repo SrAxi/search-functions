@@ -1,8 +1,10 @@
 const { performance } = require('perf_hooks');
-const { linearSearch, binarySearch } = require('./search-functions');
+const { linearSearch, linearMaxComparisons, binarySearch, binaryMaxComparisons } = require('./search-functions');
 
 // Logging tests
 function functionsTester(x, y) {
+    console.log(`linearMaxComparisons(${x}): ${linearMaxComparisons(x)}`);
+    console.log(`binaryMaxComparisons(${x}): ${binaryMaxComparisons(x)}`);
     console.log(`linearSearch(${x}, ${y}) time: ${testIterator(linearSearch, x, y)}ms`);
     console.log(`binarySearch(${x}, ${y}) time: ${testIterator(binarySearch, x, y)}ms`);
     console.log('---------------------');

@@ -19,6 +19,10 @@ function linearSearch(n, x) {
     }
 }
 
+function linearMaxComparisons(n) {
+    return n;
+}
+
 // binary search
 // Amount of possible comparisons = log2 n
 function binarySearch(n, x) {
@@ -26,7 +30,7 @@ function binarySearch(n, x) {
     const halfLength = (chunk) => Math.ceil(chunk.length / 2);
     const getMiddle = (chunk) => chunk[halfLength(chunk)];
     const getLeftSide = (chunk) => chunk.slice(0, halfLength(chunk));
-    const getRightSide = (chunk) => chunk.slice(halfLength(chunk), chunk.length);
+    const getRightSide = (chunk) => chunk.slice(halfLength(chunk));
 
     let currentElem = getMiddle(arr);
 
@@ -47,7 +51,15 @@ function binarySearch(n, x) {
     return currentElem;
 }
 
+// We calculate log2 n, and then add 1 for when we only have the last element remaining
+function binaryMaxComparisons(n) {
+    return Math.floor(Math.log2(n)) + 1;
+}
+
 module.exports = {
+    createArray,
     linearSearch,
+    linearMaxComparisons,
     binarySearch,
+    binaryMaxComparisons,
 };
