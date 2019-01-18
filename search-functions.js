@@ -47,32 +47,7 @@ function binarySearch(n, x) {
     return currentElem;
 }
 
-// Logging tests
-function functionsTester(x, y) {
-    console.time(`linearSearch(${x}, ${y}) time`);
-    linearSearch(x, y);
-    console.timeEnd(`linearSearch(${x}, ${y}) time`);
-
-    console.time(`binarySearch(${x}, ${y}) time`);
-    binarySearch(x, y);
-    console.timeEnd(`binarySearch(${x}, ${y}) time`);
-
-    console.log('---------------------');
-}
-
-function pickRandom(max) {
-    return Math.floor(Math.random() * max + 1);
-}
-
-// Testing performance
-function testPerformance() {
-    functionsTester(100, pickRandom(100));
-    functionsTester(1000, pickRandom(1000));
-    functionsTester(10000, pickRandom(10000));
-    functionsTester(100000, pickRandom(100000));
-    functionsTester(1000000, pickRandom(1000000));
-    functionsTester(10000000, pickRandom(10000000));
-}
-
-// This to test performance picking random numbers
-// testPerformance();
+module.exports = {
+    linearSearch,
+    binarySearch,
+};
