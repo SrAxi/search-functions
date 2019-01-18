@@ -16,32 +16,32 @@ An example of the Performance test:
 ```
 linearMaxComparisons(100): 100
 binaryMaxComparisons(100): 7
-linearSearch(100, 99) time: 0.0296ms
-binarySearch(100, 99) time: 0.0167ms
+linearSearch(100, 99) time: 0.0273ms
+binarySearch(100, 99) time: 0.0065ms
 ---------------------
 linearMaxComparisons(1000): 1000
 binaryMaxComparisons(1000): 10
-linearSearch(1000, 999) time: 0.0161ms
+linearSearch(1000, 999) time: 0.0144ms
 binarySearch(1000, 999) time: 0.0097ms
 ---------------------
 linearMaxComparisons(10000): 10000
 binaryMaxComparisons(10000): 14
-linearSearch(10000, 9999) time: 0.0629ms
-binarySearch(10000, 9999) time: 0.0811ms
+linearSearch(10000, 9999) time: 0.0592ms
+binarySearch(10000, 9999) time: 0.0709ms
 ---------------------
 linearMaxComparisons(100000): 100000
 binaryMaxComparisons(100000): 17
-linearSearch(100000, 99999) time: 2.0765ms
-binarySearch(100000, 99999) time: 2.0207ms
+linearSearch(100000, 99999) time: 1.6163ms
+binarySearch(100000, 99999) time: 1.5451ms
 ---------------------
 linearMaxComparisons(1000000): 1000000
 binaryMaxComparisons(1000000): 20
-linearSearch(1000000, 999999) time: 24.7824ms
-binarySearch(1000000, 999999) time: 27.9462ms
+linearSearch(1000000, 999999) time: 23.0340ms
+binarySearch(1000000, 999999) time: 25.4909ms
 ---------------------
 linearMaxComparisons(10000000): 10000000
 binaryMaxComparisons(10000000): 24
-linearSearch(10000000, 9999999) time: 268.7915ms
-binarySearch(10000000, 9999999) time: 301.8867ms
+linearSearch(10000000, 9999999) time: 236.5145ms
+binarySearch(10000000, 9999999) time: 265.1858ms
 ---------------------
 ```

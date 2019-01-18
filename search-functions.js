@@ -3,8 +3,13 @@
  **********************************************/
 
 // Helper for creating an Array with a given length
+// Using for loop for increasing performance
 function createArray(n) {
-    return [...Array(n).keys()];
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(i)
+    }
+    return arr;
 }
 
 // linear search
