@@ -14,32 +14,65 @@ function linearSearch(n, x) {
 
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] === x) {
-            return i;
+            return arr[i];
         }
     }
 }
 
-console.log('linearSearch result', linearSearch(10, 7));
-
 // binary search
 // Amount of possible comparisons = log2 n
 function binarySearch(n, x) {
-    const arr = createArray(n);
-    const getHalf = (chunk, num) => chunk[num/2];
-    let currentIndex = getHalf(arr, n);
+    let arr = createArray(n);
+    const halfLength = (chunk) => Math.ceil(chunk.length / 2);
+    const getMiddle = (chunk) => chunk[halfLength(chunk)];
+    const getLeftSide = (chunk) => chunk.slice(0, halfLength(chunk));
+    const getRightSide = (chunk) => chunk.slice(halfLength(chunk), chunk.length);
 
-    // put this in a loop
-    if (x === currentIndex) {
-        return currentIndex;
-    } else if (x < currentIndex) {
-        // get left chunk
-    } else {
-        // get right chunk
+    let currentElem = getMiddle(arr);
+
+    if (x === currentElem) return currentElem;
+
+    while (x !== currentElem) {
+        if (x < currentElem) {
+            // get left chunk
+            arr = getLeftSide(arr);
+            currentElem = getMiddle(arr);
+        } else {
+            // get right chunk
+            arr = getRightSide(arr);
+            currentElem = getMiddle(arr);
+        }
     }
 
-
-
-    return getHalf(arr, n);
+    return currentElem;
 }
 
-console.log('binarySearch result', binarySearch(10, 7));
+// Logging tests
+function functionsTester(x, y) {
+    console.time(`linearSearch(${x}, ${y}) time`);
+    linearSearch(x, y);
+    console.timeEnd(`linearSearch(${x}, ${y}) time`);
+
+    console.time(`binarySearch(${x}, ${y}) time`);
+    binarySearch(x, y);
+    console.timeEnd(`binarySearch(${x}, ${y}) time`);
+
+    console.log('---------------------');
+}
+
+function pickRandom(max) {
+    return Math.floor(Math.random() * max + 1);
+}
+
+// Testing performance
+function testPerformance() {
+    functionsTester(100, pickRandom(100));
+    functionsTester(1000, pickRandom(1000));
+    functionsTester(10000, pickRandom(10000));
+    functionsTester(100000, pickRandom(100000));
+    functionsTester(1000000, pickRandom(1000000));
+    functionsTester(10000000, pickRandom(10000000));
+}
+
+// This to test performance picking random numbers
+// testPerformance();
