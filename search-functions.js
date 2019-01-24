@@ -12,8 +12,16 @@ function createArray(n) {
     return arr;
 }
 
-// linear search
-// Amount of possible comparisons = n
+/**
+ * Linear search
+ *
+ * Max iterations: n
+ * Algorithm complexity: Linear time complexity: O(n)
+ *
+ * @param {Number} n Array size
+ * @param {Number} x Desired number
+ * @returns {*}
+ */
 function linearSearch(n, x) {
     const arr = createArray(n);
 
@@ -28,8 +36,16 @@ function linearMaxComparisons(n) {
     return n;
 }
 
-// binary search
-// Amount of possible comparisons = log2 n
+/**
+ * Binary search
+ *
+ * Max iterations: log2 n
+ * Algorithm complexity: Logarithmic time complexity: O(log n)
+ *
+ * @param {Number} n Array size
+ * @param {Number} x Desired number
+ * @returns {Number} currentElem
+ */
 function binarySearch(n, x) {
     let arr = createArray(n);
     const halfLength = (chunk) => Math.ceil(chunk.length / 2);
