@@ -4,10 +4,8 @@
   "description": "Creating search functions with different algorithms in Vanilla JS",
   "main": "search-functions.js",
   "devDependencies": {
+    "function-performance-test": "^1.0.5",
     "jest": "^23.6.0"
-  },
-  "devDependencies": {
-    "function-performance-test": "^1.0.5"
   },
   "scripts": {
     "test": "jest"
