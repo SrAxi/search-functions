@@ -17,13 +17,19 @@ test('Should calculate correctly the max amount of comparisons for binary algori
 });
 
 test('Should find correctly the element using linear algorithm', () => {
-    expect(linearSearch(10, 7)).toBe(7);
-    expect(linearSearch(100, 77)).toBe(77);
-    expect(linearSearch(1000, 777)).toBe(777);
+    const arr10 = createArray(10);
+    const arr100 = createArray(100);
+    const arr1000 = createArray(1000);
+    expect(linearSearch(arr10, 7)).toBe(7);
+    expect(linearSearch(arr100, 77)).toBe(77);
+    expect(linearSearch(arr1000, 777)).toBe(777);
 });
 
 test('Should find correctly the element using binary algorithm', () => {
-    expect(binarySearch(10, 7)).toBe(7);
-    expect(binarySearch(100, 77)).toBe(77);
-    expect(binarySearch(1000, 777)).toBe(777);
+    const arr10 = createArray(10);
+    const arr100 = createArray(100);
+    const arr1000 = createArray(1000);
+    expect(binarySearch(arr10, 7)).toBe(7);
+    expect(binarySearch(arr100, 77)).toBe(77);
+    expect(binarySearch(arr1000, 777)).toBe(777);
 });

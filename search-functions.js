@@ -18,13 +18,11 @@ function createArray(n) {
  * Max iterations: n
  * Algorithm complexity: Linear time complexity: O(n)
  *
- * @param {Number} n Array size
+ * @param {Array} arr Input array
  * @param {Number} x Desired number
  * @returns {*}
  */
-function linearSearch(n, x) {
-    const arr = createArray(n);
-
+function linearSearch(arr, x) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] === x) {
             return arr[i];
@@ -42,12 +40,11 @@ function linearMaxComparisons(n) {
  * Max iterations: log2 n
  * Algorithm complexity: Logarithmic time complexity: O(log n)
  *
- * @param {Number} n Array size
+ * @param {Array} arr Input array
  * @param {Number} x Desired number
  * @returns {Number} currentElem
  */
-function binarySearch(n, x) {
-    let arr = createArray(n);
+function binarySearch(arr, x) {
     const halfLength = (chunk) => Math.ceil(chunk.length / 2);
     const getMiddle = (chunk) => chunk[halfLength(chunk)];
     const getLeftSide = (chunk) => chunk.slice(0, halfLength(chunk));
