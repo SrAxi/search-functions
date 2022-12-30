@@ -5,7 +5,7 @@
   "main": "search-functions.js",
   "devDependencies": {
     "function-performance-test": "^1.0.5",
-    "jest": "^23.6.0"
+    "jest": "^29.3.1"
   },
   "scripts": {
     "test": "jest"
